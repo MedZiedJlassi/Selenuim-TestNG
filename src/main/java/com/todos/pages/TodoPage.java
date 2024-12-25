@@ -25,26 +25,36 @@ public class TodoPage extends BasePage{
 	@FindBy(how = How.XPATH, using = "//input[@data-testid='todo-item-toggle']")
 	public static WebElement checkBox;
 	
-	public void submitTodo(String todo) {
-		inputText.clear();
-		inputText.sendKeys(todo);
-		inputText.sendKeys(Keys.ENTER);
+	@FindBy(how = How.XPATH, using = "//button[@class='clear-completed']")
+	public static WebElement removeBtn;
+	
+	
+	
+	public String getPageSource() {
+		String element = driver.getPageSource();
+		return element;
 	}
 	
-	public boolean isElementDisplayed(WebElement element) {
-		boolean isElementDisplayed = element.isDisplayed();
-		return isElementDisplayed;
-	}
+//	public void submitTodo(String todo) {
+//		inputText.clear();
+//		inputText.sendKeys(todo);
+//		inputText.sendKeys(Keys.ENTER);
+//	}
 	
-	public String checkElementContain(WebElement element) {
-		String elementTodo = element.getText();
-		return elementTodo;
-	}
+//	public boolean isElementDisplayed(WebElement element) {
+//		boolean isElementDisplayed = element.isDisplayed();
+//		return isElementDisplayed;
+//	}
 	
-	public boolean isCheckBoxSelected(WebElement element) {
-		boolean isCheckBoxSelected = element.isSelected();
-		return isCheckBoxSelected;
-	}
+//	public String checkElementContain(WebElement element) {
+//		String elementTodo = element.getText();
+//		return elementTodo;
+//	}
+	
+//	public boolean isCheckBoxSelected(WebElement element) {
+//		boolean isCheckBoxSelected = element.isSelected();
+//		return isCheckBoxSelected;
+//	}
 	
 	
 	
